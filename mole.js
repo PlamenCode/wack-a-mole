@@ -7,10 +7,9 @@ let board = document.getElementById('board');
 let restartBtn = document.getElementById('restart-btn');
     restartBtn.addEventListener('click', restart);
 
+let startBtn = document.getElementById('start-btn');
+    startBtn.addEventListener('click', () => { setGame() });
 
-window.onload = function(){
-    setGame();
-};
 
 
 function setGame(){
@@ -21,6 +20,7 @@ function setGame(){
         board.appendChild(tile);
     };
     restartBtn.style.display = 'none';
+    startBtn.style.display = 'none';
 
     window.moleInterval = setInterval(setMole, 500);
     window.plantInterval = setInterval(setPlant, 1000);
